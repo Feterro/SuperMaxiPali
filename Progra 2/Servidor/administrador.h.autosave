@@ -1,0 +1,33 @@
+#ifndef ADMINISTRADOR_H
+#define ADMINISTRADOR_H
+
+#include <QObject>
+#include <QTcpSocket>
+#include <QDebug>
+#include <QThread>
+#include <QThreadPool>
+#include <iostream>
+
+using namespace std;
+
+class Administrador : public QTcpSocket
+{
+    Q_OBJECT
+public:
+    explicit Administrador(QObject *parent = nullptr);
+    void setSocket(qintptr);
+signals:
+
+public slots:
+    void connected();
+    void disconnected();
+    void readyRead();
+  
+
+private:
+    QTcpSocket *socket;
+
+};
+
+
+#endif // ADMINISTRADOR_H

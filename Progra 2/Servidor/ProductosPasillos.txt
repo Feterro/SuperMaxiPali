@@ -1,0 +1,6 @@
+01;20;Arroz
+20;45;Cloro
+01;34;Frijoles
+15;28;Jugos
+4;73;Jamones
+01;20;Sal

@@ -1,0 +1,3 @@
+1234567;Juan Perez;11;23658974;juanpq@gmail.com
+1290738;Jose Ramirez;20;23658911;jram45@gmail.com
+2345678;Ana Campos;45;1134667;ancamp5@gmail.com
