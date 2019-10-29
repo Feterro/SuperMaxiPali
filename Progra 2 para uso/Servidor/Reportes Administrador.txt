@@ -1,0 +1,95 @@
+*******************************Reportes administrador*******************************
+Pasillo mas vendido: 
+                     01 Abarrotes
+
+Pasillo menos vendido: 
+                      01 Abarrotes
+
+Producto mas vendido en un pasillo: 
+                                    Pasillo: 01 
+                                                 20 Arroz
+La marca mas vendida es: 
+                       Pasillo: 01 producto: 20
+                                                      51 Luisiana
+Las marcas del producto que escogio son: 
+Pasillo: 20 Producto: 45 : 
+                       67~Blanquita~4~500
+Se selecciono un codigo de pasillo inexistente
+
+Clientes registrados del supermercado: 
+
+                                    1234567,Juan Perez
+
+                                    1290738,Jose Ramirez
+
+                                    2345678,Ana Campos
+
+Pasillos que existen en el supermercado: 
+                                         Abarrotes 01
+                                         Carnes 4
+                                         Bebidas 15
+                                         Limpieza 20
+
+Producto mas cargado en gondolas: 
+                                  20 Arroz
+El iventario del supermecado es: 
+                                   51 Luisiana  1 1
+                                   67 SalSol  13 0
+                                   36 Rojitos  13 0
+                                   38 CintaAzul  1 1
+                                   37 Kerns  13 0
+                                   67 Blanquita  13 0
+*******************************Reportes administrador*******************************
+Pasillo mas vendido: 
+                     01 Abarrotes
+
+Pasillo menos vendido: 
+                      01 Abarrotes
+
+Producto mas vendido en un pasillo: 
+                                    Pasillo: 01 
+                                                 20 Arroz
+La marca mas vendida es: 
+                       Pasillo: 01 producto: 20
+                                                      51 Luisiana
+Las marcas del producto que escogio son: 
+Pasillo: 01 Producto: 20 : 
+                       51~Luisiana~24~1000
+                       67~SalSol~10~200
+
+Productos de un pasillo: 
+Pasillo: 4
+                        73~Jamones
+
+Clientes registrados del supermercado: 
+
+                                    1234567,Juan Perez
+
+                                    1290738,Jose Ramirez
+
+                                    2345678,Ana Campos
+
+Pasillos que existen en el supermercado: 
+                                         Abarrotes 01
+                                         Carnes 4
+                                         Bebidas 15
+                                         Limpieza 20
+
+Producto mas cargado en gondolas: 
+                                  20 Arroz
+El iventario del supermecado es: 
+                                   51 Luisiana  1 1
+                                   67 SalSol  13 0
+                                   36 Rojitos  13 0
+                                   38 CintaAzul  1 1
+                                   37 Kerns  13 0
+                                   67 Blanquita  13 0
+
+Cliente con mas facturas: 
+                         2345678 1398079563
+
+Cliente con menos facturas: 
+                         1234567 995897390
+
+Factura de mayor monto: 
+                          1234567 Juan Perez 2.42143e+014

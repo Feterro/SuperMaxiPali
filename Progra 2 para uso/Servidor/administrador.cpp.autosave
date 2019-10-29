@@ -1,0 +1,49 @@
+#include "administrador.h"
+
+Administrador::Administrador(QObject *parent) : QTcpSocket(parent)
+{
+    QThreadPool::globalInstance()->setMaxThreadCount(10);
+}
+
+void Administrador::setSocket(qintptr handle)
+{
+      socket=new QTcpSocket(this);
+
+    connect(socket,SIGNAL(connected()),this,SLOT(connected()));
+    connect(socket,SIGNAL(disconnected()),this,SLOT(disconnected()));
+    connect(socket,SIGNAL(readyRead()),this,SLOT(readyRead()));
+
+    socket->setSocketDescriptor(handle);
+
+    qDebug()<< "Administrador conectado!";
+}
+void Administrador:: connected()
+{
+
+}
+void Administrador::disconnected()
+{
+    qDebug()<<"Administrador desconectado";
+}
+void Administrador::readyRead()
+{
+    QByteArray array=socket->readAll();
+    qDebug()<<"Administrador dice: "+array;
+}
+
+
+void Administrador::run()
+{
+    string insercion;
+    while(true)
+    {
+        cout<<"Digite: ";
+        cin>>insercion;
+        if(insercion=="1")
+        {
+            cout<<endl;
+            cout<<"conoC Prro"<<endl;
+            return;
+        }
+    }
+}

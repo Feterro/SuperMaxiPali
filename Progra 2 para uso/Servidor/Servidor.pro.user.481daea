@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.10.1, 2019-10-29T00:32:46. -->
+<!-- Written by QtCreator 4.10.0, 2019-10-14T23:32:34. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -306,8 +306,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Servidor</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Edgar/Desktop/Varios/Fabri/c++/Progra 3/SuperMaxiPali/Progra 2/Servidor/Servidor.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Servidor2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Edgar/Desktop/Fabri/c++/Servidor/Servidor.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
