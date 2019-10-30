@@ -27,9 +27,101 @@ void serverSocket::disconnected()
 void serverSocket::readyRead()
 {
     QByteArray info=socket->readAll();
-    qDebug()<<info<<endl;
+    //qDebug()<<info<<endl;
     string infoConv=info.toStdString();
-    if(infoConv.substr(0,2)=="IN")//cambiar f
+    if(infoConv.substr(0,2)=="IN"||infoConv.substr(0,2)=="RE"||infoConv.substr(0,2)=="CO"||infoConv.substr(0,2)=="CA"||infoConv.substr(0,2)=="CB"||infoConv.substr(0,2)=="CF"||infoConv.substr(0,2)=="ZP"||infoConv.substr(0,2)=="ZC"||infoConv.substr(0,2)=="ZR")
+          this->funcionesCliente(infoConv);
+    else if(infoConv.substr(0,2)=="XB"||infoConv.substr(0,2)=="XB"||infoConv.substr(0,2)=="XV"||infoConv.substr(0,2)=="XP"||infoConv.substr(0,2)=="XR")
+        this->funcionesAdministrador(infoConv);
+}
+void serverSocket::funcionesAdministrador(string infoConv)
+{
+    if(infoConv.substr(0,2)=="XB")
+    {
+        arbolPasillos.bloqueo=true;
+    }
+    else if(infoConv.substr(0,2)=="XD")
+    {
+        arbolPasillos.bloqueo=false;
+    }
+    else if(infoConv.substr(0,2)=="XV")
+    {
+        string codVal=infoConv;
+        char cstr[codVal.size() + 1];
+        strcpy(cstr, codVal.c_str());
+        char var[]=";";
+        char *token = strtok(cstr,var);
+        token = strtok(NULL,var);
+        string iden=token;
+        stringstream cb(iden);
+        int identi;
+        cb>>identi;
+        if(princi.validarAdministrador(arbolAdmin,identi))
+            this->socket->write("AV");
+        else
+            this->socket->write("AN");
+    }
+    else if(infoConv.substr(0,2)=="XP")
+    {
+        string codVal=infoConv;
+        cout<<codVal<<endl;
+        char cstr[codVal.size() + 1];
+        strcpy(cstr, codVal.c_str());
+        char var[]=";";
+        char *token = strtok(cstr,var);
+        token = strtok(NULL,var);
+        string codigo=token;
+        token = strtok(NULL,var);
+        string nombre=token;
+        int largoIni=0;
+        int largoCambio=0;
+        largoIni=arbolPasillos.largoArbol(arbolPasillos.raiz, largoIni);
+        arbolPasillos.InsertaBinario(arbolPasillos.raiz,codigo,nombre);
+        largoCambio=arbolPasillos.largoArbol(arbolPasillos.raiz, largoCambio);
+        if (largoIni!=largoCambio)
+            socket->write("LE;Pasillo Agregado con exito");
+        else
+            socket->write("LE;El codigo deseado ya existe");
+    }
+    else if(infoConv.substr(0,2)=="XR")
+    {
+        string codVal=infoConv;
+        //cout<<codVal<<endl;
+        char cstr[codVal.size() + 1];
+        strcpy(cstr, codVal.c_str());
+        char var[]=";";
+        char *token = strtok(cstr,var);
+        token = strtok(NULL,var);
+        string codPasi=token;
+        token = strtok(NULL,var);
+        string codigo=token;
+        token = strtok(NULL,var);
+        string nombre=token;
+        bool valido=false;
+        valido=arbolPasillos.encontrarPasillo(valido, arbolPasillos.raiz, codPasi);
+        if(valido)
+        {
+            bool valid=false;
+            valid=arbolPasillos.ValidarProducto1(arbolPasillos.raiz, codPasi, codigo, valid);
+            if(!valid)
+            {
+                cout<<"valido"<<endl;
+                pnodoProd nuevo=new nodoProducto(codPasi, codigo, nombre);
+                AVLProducto arbolprod;
+                arbolprod.EnlaceAvl(arbolPasillos.raiz, nuevo);
+                this->socket->write("LE;Producto agregado con exito");
+                arbolPasillos.InordenTriple(arbolPasillos.raiz);
+            }
+            else
+                this->socket->write("VF");
+        }
+        else
+            this->socket->write("VF");
+    }
+}
+void serverSocket::funcionesCliente(string infoConv)
+{
+    if(infoConv.substr(0,2)=="IN")
     {
         if(arbolPasillos.bloqueo==false)
         {

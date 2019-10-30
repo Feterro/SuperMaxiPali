@@ -16,7 +16,8 @@ class ThreadAdmin: public QThread
 public:
     explicit ThreadAdmin(QObject *parent=nullptr);
     void reportes();
-
+    void insertarPas();
+    void insertarPro();
 
 signals:
     void escribirServidor(QByteArray info);

@@ -100,7 +100,6 @@ void Cliente::correccion(string vali)
     else if(vali=="VF")
         this->correcto=false;
 }
-
 void Cliente::verificarBloqueo(string vali)
 {
   if(vali=="BK")

@@ -35,17 +35,50 @@ void Admin::disconnected()
 }
 void Admin::readyRead()
 {
-
+    QByteArray info=socketCli->readAll();
+    string infoConv=info.toStdString();
+    //cout<<infoConv<<endl;
+    if(infoConv.substr(0,2)=="AV"||infoConv.substr(0,2)=="AN")
+    {
+        cambiarRegistro(infoConv);
+    }
+    else if(infoConv.substr(0,2)=="LE")
+    {
+        string codVal=infoConv;
+        char cstr[codVal.size() + 1];
+        strcpy(cstr, codVal.c_str());
+        char var[]=";";
+        char *token = strtok(cstr,var);
+        token = strtok(NULL,var);
+        string lectura=token;
+        cout<<lectura<<endl;
+    }
+    else if(infoConv.substr(0,2)=="VF")
+    {
+        correccion(infoConv);
+    }
 }
 void Admin::escribirServidor(QByteArray info)
 {
     this->socketCli->write(info);
 }
-void Admin::verificarBloqueo(string vali)
+void Admin::cambiarRegistro(string infoConv)
 {
-  if(vali=="BK")
-    this->bloqueo=true;
-  else
-    this->bloqueo=false;
+    if(infoConv=="AV")
+    {
+        this->registro=true;
+    }
+    else if(infoConv=="AN")
+    {
+        this->registro=false;
+    }
 }
 
+void Admin::correccion(string vali)
+{
+    cout<<"VALI="<<vali<<endl;
+    if(vali=="VF")
+        this->correcto=false;
+    else
+        this->correcto=true;
+}

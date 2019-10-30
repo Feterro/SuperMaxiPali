@@ -28,8 +28,8 @@ int main(int argc, char *argv[])
     //arbolPasillos.InordenTriple(arbolPasillos.raiz);
     cout<<"\n"<<endl;
 
-//    arbolInventario=arbolInventario.agregarInventario();
-//    cout<<"\n"<<endl;
+    arbolInventario=arbolInventario.agregarInventario();
+    cout<<"\n"<<endl;
 
     listaCiudades=listaCiudades.agregarCiudades();
     cout<<"\n"<<endl;

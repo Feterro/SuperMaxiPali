@@ -22,53 +22,53 @@ void ThreadCli::run()
                 cout<<"Longitud de cedula incorrecto"<<endl;
         }
         emit escribirServidor(QString::fromStdString("IN"+cedDig).toUtf8());
-        this->sleep(1);
-            this->sleep(1);
-            if(socketCli.registro==true)
+        this->sleep(2);
+        if(socketCli.registro==true)
+        {
+            string decis;
+            while(true)
             {
-                string decis;
-                while(true)
+               this->sleep(1);
+               cout<<"Menu\n"<<endl;
+               cout<<"\n 1)Consultar Precio";
+               cout<<"\n 2)Consultar si un producto es de la canasta";
+               cout<<"\n 3)Consultar el % impuesto de un producto";
+               cout<<"\n 4)Comprar";
+               cout<<"\n 5)Reportes";
+               cout<<"\n 6)Salir";
+               cout<<"\n Digite el numero de la opcion deseada: "<<endl;
+               cin>>decis;
+               emit escribirServidor(QString::fromStdString("IN"+cedDig).toUtf8());
+               this->sleep(1);
+               if(socketCli.bloqueo==false)
                 {
-                   cout<<"Menu\n"<<endl;
-                   cout<<"\n 1)Consultar Precio";
-                   cout<<"\n 2)Consultar si un producto es de la canasta";
-                   cout<<"\n 3)Consultar el % impuesto de un producto";
-                   cout<<"\n 4)Comprar";
-                   cout<<"\n 5)Reportes";
-                   cout<<"\n 6)Salir";
-                   cout<<"\n Digite el numero de la opcion deseada: "<<endl;
-                   cin>>decis;
-                   emit escribirServidor(QString::fromStdString("IN"+cedDig).toUtf8());
-                   this->sleep(1);
-                   if(socketCli.bloqueo==false)
+                    if(decis=="1")
                     {
-                        if(decis=="1")
-                        {
-                           consPre();
-                        }
-                        else if(decis=="2")
-                        {
-                            consCan();
-                        }
-                        else if(decis=="3")
-                        {
-                            consImp();
-                        }
-                        else if(decis=="4")
-                        {
-                            comprar(cedDig,false);
-                        }
-                        else if(decis=="5")
-                        {
-                            reportes();
-                        }
-                        else if(decis=="6")
-                        {
-                            cout<<"Gracias por usar nuestro servicio!"<<endl;
-                            break;
-                        }
-                        else
-                            cout<<"opcion invalida"<<endl;
+                       consPre();
+                    }
+                    else if(decis=="2")
+                    {
+                        consCan();
+                    }
+                    else if(decis=="3")
+                    {
+                        consImp();
+                    }
+                    else if(decis=="4")
+                    {
+                        comprar(cedDig,false);
+                    }
+                    else if(decis=="5")
+                    {
+                        reportes();
+                    }
+                    else if(decis=="6")
+                    {
+                        cout<<"Gracias por usar nuestro servicio!"<<endl;
+                        break;
+                    }
+                    else
+                        cout<<"opcion invalida"<<endl;
                    }
                    else
                       cout<<"Se esta actualizando el servidor, intente mas tarde"<<endl;

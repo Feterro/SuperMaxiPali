@@ -20,6 +20,8 @@ public:
     explicit serverSocket(QObject *parent = nullptr);
     void setSocket(qintptr);
     void verificarCed(string info);
+    void funcionesCliente(string sennal);
+    void funcionesAdministrador(string sennal);
     void agregar(string cantConv);
     QTcpSocket *socket;
 

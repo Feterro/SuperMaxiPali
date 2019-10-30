@@ -2110,68 +2110,56 @@ void Principal::ModificarPrecio(){
         ModificarPrecio();
     }
 }
-arbolPas arbolPas::insertarPasillo(){
-    cout<<"Ingrese el numero del nuevo pasillo: "<<endl;
-    string codPas;
-    cin>>codPas;
-    cout<<"Ingrese el nombre del nuevo pasillo :"<<endl;
-    string nomb;
-    cin>>nomb;
-    int largo=0;
-    largo=arbolPasillos.largoArbol(arbolPasillos.raiz, largo);
-    cout<<"Largo: "<<largo<<endl;
-    int largo2=0;
-    arbolPasillos.InsertaBinario(arbolPasillos.raiz, codPas, nomb);
-    largo2=arbolPasillos.largoArbol(arbolPasillos.raiz, largo2);
-    cout<<"Largo2: "<<largo2<<endl;
-    if (largo!=largo2){
-        cout<<"Pasillo creado con exito!"<<endl;
-        cout<<"Codigo de pasillo: "<<codPas<<" Nombre pasillo: "<<nomb<<endl;
-    }
-    else{
-        cout<<"El pasillo no se pudo crear porque el codigo ya existia."<<endl;
-        insertarPasillo();
-    }
-    return arbolPasillos;
-}
-arbolPas arbolPas::insertarProductos(){
-    cout<<"Las opciones de pasillos son: "<<endl;
-    arbolPasillos.MostrarPasillos(arbolPasillos.raiz);
-    cout<<"Escriba el codigo de la opcion que desea: "<<endl;
-    string codPas;
-    cin>>codPas;
-    bool valido=false;
-    valido=encontrarPasillo(valido, arbolPasillos.raiz, codPas);
-    if (valido){
-        cout<<"Ingrese el codigo del producto que desea ingresar: "<<endl;
-        string codProd;
-        cin>>codProd;
-        cout<<"Ingrese el nombre del producto que desea ingresar: "<<endl;
-        string nombre;
-        cin>>nombre;
-        bool valid2=false;
-        valid2=ValidarProducto1(arbolPasillos.raiz, codPas, codProd, valid2);
-        if (!valid2){
-            pnodoProd nuevo=new nodoProducto(codPas, codProd, nombre);
-            AVLProducto arbolprod;
-            arbolprod.EnlaceAvl(arbolPasillos.raiz, nuevo);
-            cout<<"Producto agregado con exito!"<<endl;
-            cout<<"Codigo de pasillo: "<<codPas<<" Codigo de producto: "<<codProd<<" Nombre: "<<nombre<<endl;
-        }
-        else{
-            cout<<"Los datos para producto que ingreso ya existen."<<endl;
-            arbolPasillos.insertarProductos();
-        }
-    }
-    else{
-        cout<<"Escoja un codigo de un pasillo valido: "<<endl;
-        string codPas2;
-        cin>>codPas2;
-        arbolPasillos.insertarProductos();
-    }
-    return arbolPasillos;
+//arbolPas arbolPas::insertarPasillo(string codPas, string nomb){
+//    arbolPasillos.InsertaBinario(arbolPasillos.raiz, codPas, nomb);
+//    if (largo!=largo2){
+//        cout<<"Pasillo creado con exito!"<<endl;
+//        cout<<"Codigo de pasillo: "<<codPas<<" Nombre pasillo: "<<nomb<<endl;
+//    }
+//    else{
+//        cout<<"El pasillo no se pudo crear porque el codigo ya existia."<<endl;
+//        insertarPasillo();
+//    }
+//    return arbolPasillos;
+//}
+//arbolPas arbolPas::insertarProductos(){
+//    cout<<"Las opciones de pasillos son: "<<endl;
+//    arbolPasillos.MostrarPasillos(arbolPasillos.raiz);
+//    cout<<"Escriba el codigo de la opcion que desea: "<<endl;
+//    string codPas;
+//    cin>>codPas;
+//    bool valido=false;
+//    valido=encontrarPasillo(valido, arbolPasillos.raiz, codPas);
+//    if (valido){
+//        cout<<"Ingrese el codigo del producto que desea ingresar: "<<endl;
+//        string codProd;
+//        cin>>codProd;
+//        cout<<"Ingrese el nombre del producto que desea ingresar: "<<endl;
+//        string nombre;
+//        cin>>nombre;
+//        bool valid2=false;
+//        valid2=ValidarProducto1(arbolPasillos.raiz, codPas, codProd, valid2);
+//        if (!valid2){
+//            pnodoProd nuevo=new nodoProducto(codPas, codProd, nombre);
+//            AVLProducto arbolprod;
+//            arbolprod.EnlaceAvl(arbolPasillos.raiz, nuevo);
+//            cout<<"Producto agregado con exito!"<<endl;
+//            cout<<"Codigo de pasillo: "<<codPas<<" Codigo de producto: "<<codProd<<" Nombre: "<<nombre<<endl;
+//        }
+//        else{
+//            cout<<"Los datos para producto que ingreso ya existen."<<endl;
+//            arbolPasillos.insertarProductos();
+//        }
+//    }
+//    else{
+//        cout<<"Escoja un codigo de un pasillo valido: "<<endl;
+//        string codPas2;
+//        cin>>codPas2;
+//        arbolPasillos.insertarProductos();
+//    }
+//    return arbolPasillos;
 
-}
+//}
 arbolPas Principal::insertarMarca(){
     cout<<"Estas son las opciones de pasillos que hay: "<<endl;
     arbolPasillos.MostrarPasillos(arbolPasillos.raiz);

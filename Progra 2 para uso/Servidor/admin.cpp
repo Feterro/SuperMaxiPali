@@ -41,10 +41,10 @@ void Admin::run()
                 string resp;
                 cin>>resp;
                 if (resp=="1"){
-                    arbolPasillos=arbolPasillos.insertarPasillo();
+                    //arbolPasillos=arbolPasillos.insertarPasillo();
                 }
                 else if (resp=="2"){
-                    arbolPasillos=arbolPasillos.insertarProductos();
+                    //arbolPasillos=arbolPasillos.insertarProductos();
                 }
                 else if (resp=="3"){
                     arbolPasillos=princi.insertarMarca();
@@ -103,35 +103,3 @@ void Admin::run()
     }
 }
 
-//void Admin::run()
-//{
-//    bool fin=true;
-//    while(fin)
-//    {
-//        int identificacion;
-//        cout<<"Digite su codigo de administrador: ";
-//        cin>>identificacion;
-//        cout<<"\n";
-//        if(princi.validarAdministrador(arbolAdmin,identificacion))
-//        {
-//            arbolPasillos.bloqueo=true;
-//            string uno;
-//            cout<<"Bienvenido!"<<endl;
-//            cout<<"Ponga 1 y vea que pasa prro: ";
-//            cin>>uno;
-//            if(uno=="1")
-//            {
-//                if(!princi.cola.ListaVacia())
-//                {
-//                    qintptr descrip=princi.cola.primero->descriptor;//BORRAR PRIMERO
-//                    princi.agregarListaOrdenada();
-
-//                }
-//                else
-//                    cout<<"No se han realizado compras aun"<<endl;
-//            }
-//        }
-//        else
-//            cout<<"Codigo invalido"<<endl;
-//    }
-//}

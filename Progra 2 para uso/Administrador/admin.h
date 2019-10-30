@@ -15,21 +15,16 @@ Q_OBJECT
 public:
     Admin(QObject *parent = nullptr);
     void SocketConnection();
-    void cambiarRegistro();
-    void verificarBloqueo();
+    void cambiarRegistro(string infoConv);
+    void correccion(string vali);
     bool registro;
-    bool bloqueo=false;
-    bool correcto;
-
+    bool correcto=true;
 public slots:
     void connected();
     void disconnected();
     void readyRead();
     void escribirServidor(QByteArray info);
-    void verificarBloqueo(string vali);
-
 private:
     QTcpSocket *socketCli;
-
 };
 #endif // ADMIN_H
