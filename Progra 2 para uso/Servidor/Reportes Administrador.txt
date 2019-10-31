@@ -93,3 +93,13 @@ Cliente con menos facturas:
 
 Factura de mayor monto: 
                           1234567 Juan Perez 2.42143e+014
+*******************************Reportes administrador*******************************
+Pasillo mas vendido: 
+                     01 Abarrotes
+
+Pasillo menos vendido: 
+                      01 Abarrotes
+Se selecciono un codigo de pasillo inexistente
+La marca mas vendida es: 
+                       Pasillo: 01 producto: 06
+                                                      86 SalSol

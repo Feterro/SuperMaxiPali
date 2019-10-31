@@ -35,6 +35,7 @@ los pasillos. Base de la estructura creada con archivos
     pnodoMarca encontrarNodo1(pnodoPas ra, string codPas, string codProd, string codMar, pnodoMarca marca);
     string InordenServ(pnodoPas R);
     arbolPas insertarPasillo(string codPas, string nomb);
+    arbolPas eliminarPasillo (string codPas);
     int largoArbol(pnodoPas R, int cont);
     arbolPas insertarProductos();
     pnodoProd encontrarNodoProd1(pnodoPas ra, string codPas, string codProd, pnodoProd prod);

@@ -1,4 +1,24 @@
-11;Panama
-20;España
-15;Barcelona
-4;Mexico
+11;SanJose
+22;Cartago
+33;Heredia
+44;Supermercado
+55;Liberia
+114;P4
+11;Pvalidacion
+66;Bagaces
+77;Bodega
+55;Pvalidacion2
+88;Buenos Aires
+99;Tilaran
+113;P3
+12;Pital
+100;Puerto Viejo
+49;Siquirres
+18;Matina
+112;P2
+95;Telire
+49;Pvalidacion3
+120;Parrita
+122;Samara
+09;Jaco
+111;P1
